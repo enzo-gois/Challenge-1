@@ -9,8 +9,8 @@
 body {
   display: flex;
   font-family: "Mulish", sans-serif;
-  height: 1080px;
-  width: 1920px;
+  height: auto;
+  width: auto;
 }
 
 h1 {
@@ -19,8 +19,8 @@ h1 {
 }
 
 section {
-  height: 1080px;
-  width: 960px;
+  height: 100vh;
+  width: 50vw;
 }
 
 .left-section {
@@ -37,7 +37,7 @@ section {
   width: auto;
   height: 100%;
   margin-top: 94px;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 }
 
 .introduce-login {
@@ -97,6 +97,8 @@ input[type="date"] {
   display: flex;
   flex-direction: column;
   margin-top: 96px;
+  align-items: center;
+  margin-bottom: 4px;
 }
 
 button {
@@ -115,8 +117,18 @@ button {
   cursor: pointer;
 }
 
+span {
+  color: #F22E07;
+  width: 16px;
+}
+
+span a {
+  text-decoration: none;
+  color: #F22E07;
+}
+
 .right-section {
-  background: url("/images/Mask\ Group.png");
+  background: url("/Challenge-1/images/Mask\ Group.png");
   background-size: cover;
   text-align: center;
 }
