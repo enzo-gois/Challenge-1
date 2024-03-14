@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  font-family: "Mulish", sans-serif;
+  width: auto;
+  height: auto;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 18px;
+  font-weight: 400;
+  height: 75px;
+  width: 273px;
+}
+
+section {
+  height: 100vh;
+  width: 50vw;
+}
+
+.left-section {
+  background-image: linear-gradient( #33383D,#1C1D20);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 772px;
+  margin-top: 197px;
+  margin-bottom: 111px;
+}
+
+.introduce-login {
+  color: #E0E0E0;
+  text-align: start;
+  width: 301px;
+}
+
+.introduce-login p {
+  font-size: 16px;
+  height: 52px;
+}
+
+.input-container {
+  margin-top: 135px;
+  margin-bottom: 115px;
+  text-align: start;
+}
+
+.input-container p {
+  font-size: 30px;
+  color: #E0E0E0;
+  margin-bottom: 32px;
+}
+
+.inputs, .inputs-1 {
+  display: flex;
+  align-items: center;
+}
+
+.inputs-1 {
+  margin-bottom: 33px;
+}
+
+.inputs img, .inputs-1 img {
+  width: 20px;
+  margin-left: 18px;
+}
+
+.inputs img {
+  height: 25px;
+}
+
+.inputs-1 img {
+  height: 20px;
+}
+
+input {
+  width: 379px;
+  height: 60px;
+  border: 1px solid#fff;
+  border-radius: 50px;
+  color: #E0E0E0;
+  background: transparent;
+  padding-left: 20px;
+  padding: 20px;
+}
+
+input::placeholder {
+  font-size: 16px;
+  color: #E0E0E0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons #log-in {
+  margin-bottom: 20px;
+}
+
+button {
+  width: 379px;
+  height: 67px;
+  border-radius: 50px;
+  background: 
+    linear-gradient(#FF2D04,#C13216) padding-box,
+    linear-gradient(-45deg,#C13216,#FF2D04) border-box
+  ;
+  border: 2px solid transparent;
+  font-size: 32px;
+  color: #FFF;
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.right-section {
+  background: url("/Challenge-1/images/Mask\ Group.png");
+  background-size: cover;
+  text-align: center;
+}
+
+.right-section img {
+  width: 484px;
+  height: 66px;
+  margin-top: 36px;
+}
