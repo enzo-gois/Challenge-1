@@ -62,7 +62,7 @@ function logIn() {
   })
 
   if(userName.value == usuarioValido.nome && userPassword.value == usuarioValido.senha) {
-    window.location.href = "http://127.0.0.1:5500/Challenge-1/Keep%20Alive/index.html"
+    window.location.href = "http://127.0.0.1:5500/Keep%20Alive/index.html"
   } else {
     userName.setAttribute('style', 'border-color: #E9B425')
     userPassword.setAttribute('style', 'border-color: #E9B425')

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @font-face {
   font-family: "MarkPro-Regular";
-  src: url("/Challenge-1/fonts/MARKPRO.OTF");
+  src: url("/fonts/MARKPRO.OTF");
 }
 
 @font-face {
   font-family: "MarkPro-Bold";
-  src: url("/Challenge-1/fonts/MARKPROBOLD.OTF");
+  src: url("/fonts/MARKPROBOLD.OTF");
 }
 
 * {
