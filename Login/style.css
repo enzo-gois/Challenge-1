@@ -31,7 +31,7 @@ section {
   display: flex;
   flex-direction: column;
   text-align: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .container {
@@ -39,8 +39,7 @@ section {
   flex-direction: column;
   width: auto;
   height: 772px;
-  margin-top: 197px;
-  margin-bottom: 111px;
+  margin: 197px 0 111px 285px;
 }
 
 .introduce-login {
@@ -75,17 +74,8 @@ section {
   margin-bottom: 33px;
 }
 
-.inputs img, .inputs-1 img {
-  width: 20px;
+#userIcon, #passwordIcon {
   margin-left: 18px;
-}
-
-.inputs img {
-  height: 25px;
-}
-
-.inputs-1 img {
-  height: 20px;
 }
 
 input {
@@ -97,10 +87,12 @@ input {
   background: transparent;
   padding-left: 20px;
   padding: 20px;
+  font-family: "Mulish", sans-serif;
 }
 
 input::placeholder {
   font-size: 16px;
+  font-family: "Mulish", sans-serif;
   color: #E0E0E0;
 }
 
@@ -139,4 +131,16 @@ button {
   width: 484px;
   height: 66px;
   margin-top: 36px;
+}
+
+#msgError {
+  position: absolute;
+  width: 283px;
+  height: 40px;
+  bottom: 312px;
+  margin-left: 48px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #E9B425;
+  display: none;
 }

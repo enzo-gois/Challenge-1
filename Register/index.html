@@ -18,43 +18,41 @@
       <div class="input-container">
         <form action="">
           <div class="inputs">
-            <label for="">first name</label>
-            <input type="text" placeholder="Your first name">
+            <label id="labelFirstName" for="">first name</label>
+            <input id="firstName" type="text" placeholder="Your first name" required>
           </div>
           <div class="inputs">
-            <label for="">last name</label>
-            <input type="text" placeholder="Your last name">
+            <label id="labelLastName" for="">last name</label>
+            <input id="lastName" type="text" placeholder="Your last name" required>
           </div>
           <div class="inputs">
-            <label for="">birth date</label>
-            <input type="text" placeholder="MM/DD/YYYY">
+            <label id="labelBirthDate" for="">birth date</label>
+            <input id="birthDate" type="text" placeholder="MM/DD/YYYY" required>
           </div>
           <div class="inputs">
             <label for="">Country</label>
-            <input type="text" placeholder="Your country">
+            <input id="country" type="text" placeholder="Your country" required>
           </div>
           <div class="inputs">
             <label for="">City</label>
-            <input type="text" placeholder="Your city">
+            <input id="city" type="text" placeholder="Your city" required>
           </div>
           <div class="inputs">
             <label for="">e-mail</label>
-            <input type="email" placeholder="A valid e-mail here">
+            <input id="email" type="email" placeholder="A valid e-mail here" required>
           </div>
           <div class="inputs">
-            <label for="">password</label>
-            <input type="password" placeholder="Your password">
+            <label id="labelPassword" for="">password</label>
+            <input id="password" type="password" placeholder="Your password" required>
           </div>
           <div class="inputs-1">
-            <label for="">password</label>
-            <input type="password" placeholder="Confirm your password">
+            <label id="labelConfirmPassword" for="">password</label>
+            <input id="confirmPassword" type="password" placeholder="Confirm your password" required>
+          </div>
+          <div class="buttons">
+            <button id="butaoCadastra" type="submit" onclick="cadastraUsuario()">Register now</button>
           </div>
         </form>
-      </div>
-      <div class="buttons">
-        <!-- <div class="gradient-button"> -->
-          <button>Register now</button>
-        <!-- </div> -->
       </div>
       <div>
         <span>Already have an account? <strong>Log in <a href="/Challenge-1/Login/index.html">here</a></strong>.</span>
