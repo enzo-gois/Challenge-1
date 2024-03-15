@@ -82,10 +82,12 @@ input {
   background: transparent;
   padding-left: 20px;
   padding: 20px;
+  font-family: "Mulish", sans-serif;
 }
 
 input::placeholder {
   font-size: 12px;
+  font-family: "Mulish", sans-serif;
   color: #E0E0E0;
 }
 
