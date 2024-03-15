@@ -1,11 +1,17 @@
+const apiKey = "e96a1bd0cd18c8d91dca4aff44314adb"
+
 window.addEventListener('load', function() {
+  cidadeUsuario = JSON.parse(localStorage.getItem('usuarioLogado'))
+  showWeather(cidadeUsuario[0])
   startTimer()
   updateClock()
   setData()
 })
 
 const clock = document.getElementById("clock")
-const date = document.getElementById("date") 
+const date = document.getElementById("date")
+const cityWeather = document.getElementById("city-weather") 
+const tempWeather = document.getElementById("temp-weather")
 let countdown = document.getElementById("time")
 let remainingTime = 30
 
@@ -24,9 +30,6 @@ function setData() {
   const monthDay = date.getDate().toString().padStart(2,'0')  
   let month = (date.getMonth() + 1).toString()
   let weekDay = date.getDay().toString()
-  console.log(monthDay)
-  console.log(month)
-  console.log(weekDay)
 
   switch(month){
     case '1': month = "janeiro"
@@ -88,4 +91,18 @@ function startTimer() {
 function updateTimer() {
   let seconds = remainingTime
   countdown.textContent = seconds
+}
+
+const getWeatherAPI = async(city) => {
+  const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`
+  const res = await fetch(apiURL)
+  const data = await res.json()
+  return data
+}
+
+const showWeather = async (city) => {
+  const data = await getWeatherAPI(city)
+
+  cityWeather.textContent = data.name
+  tempWeather.textContent = `${parseInt(data.main.temp)}°`
 }

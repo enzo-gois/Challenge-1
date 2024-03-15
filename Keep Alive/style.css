@@ -184,6 +184,11 @@ footer span {
   font-family: "MarkPro-Bold";
 }
 
+.logout a {
+  text-decoration: none;
+  color: #FFF;
+}
+
 .logout p {
   padding: 22px 22px 16px 23px;
 }

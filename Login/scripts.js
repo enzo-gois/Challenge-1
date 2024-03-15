@@ -62,6 +62,9 @@ function logIn() {
   })
 
   if(userName.value == usuarioValido.nome && userPassword.value == usuarioValido.senha) {
+    let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado') || '[]')
+    usuarioLogado.push(usuarioValido.cidade)
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado))
     window.location.href = "http://127.0.0.1:5500/Keep%20Alive/index.html"
   } else {
     userName.setAttribute('style', 'border-color: #E9B425')

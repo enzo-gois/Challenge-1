@@ -43,6 +43,8 @@ function cadastraUsuario() {
 
     localStorage.setItem('listaDeUsuarios', JSON.stringify(listaDeUsuarios))
 
+    window.location.href = 'http://127.0.0.1:5500/Login/index.html?'
+
   } else {
     alert("dados incorretos")
   }
