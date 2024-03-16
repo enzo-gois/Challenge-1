@@ -8,6 +8,7 @@ let validLastName
 
 let birthDate = document.getElementById("birthDate")
 let labelBirthDate = document.getElementById("labelBirthDate")
+let validBirthDate
 
 let country = document.getElementById("country")
 
@@ -27,7 +28,8 @@ let butaoCadastra = document.getElementById("butaoCadastra")
 const form = document.querySelector('form') 
 
 function cadastraUsuario() {
-  if(validName && validLastName && validPassword && validConfirmPassword) {
+  let validEmail = checkEmail()
+  if(validName && validLastName && validPassword && validConfirmPassword && validEmail) {
     let listaDeUsuarios = JSON.parse(localStorage.getItem('listaDeUsuarios') || '[]')
 
     listaDeUsuarios.push(
@@ -43,10 +45,7 @@ function cadastraUsuario() {
 
     localStorage.setItem('listaDeUsuarios', JSON.stringify(listaDeUsuarios))
 
-    window.location.href = 'http://127.0.0.1:5500/Login/index.html?'
-
-  } else {
-    alert("dados incorretos")
+    window.location.href = 'http://127.0.0.1:5500/Login/index.html?#'
   }
 }
 
@@ -71,6 +70,16 @@ lastName.addEventListener('keyup', () => {
     validLastName = true
   }
 })
+
+function checkEmail() {
+  const validaEmail = /[a-z0-9]+@+[a-z0-9]+.+[a-z0-9]/
+  if(validaEmail.test(email.value)){
+    return true
+  } else {
+    alert('O email precisa conter @ e .')
+    return false
+  }
+}
 
 password.addEventListener('keyup', () => {
   if(password.value.length <= 4 ) {
