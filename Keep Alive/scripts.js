@@ -102,9 +102,13 @@ const getWeatherAPI = async(city) => {
 
 const showWeather = async (city) => {
   const data = await getWeatherAPI(city)
+  if(data.message == 'city not found'){
+    cityWeather.textContent = 'cidade não encontrada'
+  } else {
+    cityWeather.textContent = data.name
+    tempWeather.textContent = `${parseInt(data.main.temp)}°`
+  }
 
-  cityWeather.textContent = data.name
-  tempWeather.textContent = `${parseInt(data.main.temp)}°`
 }
 
 function fazerLogout() {
