@@ -106,3 +106,8 @@ const showWeather = async (city) => {
   cityWeather.textContent = data.name
   tempWeather.textContent = `${parseInt(data.main.temp)}°`
 }
+
+function fazerLogout() {
+  let usuario = localStorage.setItem('usuarioLogado','[]')
+  window.location.href = 'http://127.0.0.1:5500/Login/index.html?#'
+}
