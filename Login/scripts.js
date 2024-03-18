@@ -2,7 +2,7 @@ let inputName = document.getElementById("name")
 let inputPassword = document.getElementById("password")
 let inputContainer = document.querySelector(".input-container")
 
-inputName.addEventListener("click", () => {
+function arrastaSVG() {
   let userIcon = document.getElementById("userIcon")
   let passwordIcon = document.getElementById("passwordIcon")
 
@@ -13,7 +13,7 @@ inputName.addEventListener("click", () => {
   passwordIcon.style.marginLeft = 0;
   passwordIcon.style.position = "relative"
   passwordIcon.style.right = "40px"
-} )
+}
 
 inputContainer.addEventListener("focusout", () => {
   let userIcon = document.getElementById("userIcon")

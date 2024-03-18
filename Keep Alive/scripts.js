@@ -112,6 +112,6 @@ const showWeather = async (city) => {
 }
 
 function fazerLogout() {
-  let usuario = localStorage.setItem('usuarioLogado','[]')
+  localStorage.setItem('usuarioLogado','[]')
   window.location.href = 'http://127.0.0.1:5500/Login/index.html?#'
 }

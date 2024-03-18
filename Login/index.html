@@ -18,11 +18,11 @@
       <div class="input-container">
         <p>Login</p>
         <div class="inputs-1">
-          <input id="name" type="text" placeholder="user name">
+          <input id="name" type="text" placeholder="user name" onclick="arrastaSVG()">
           <img id="userIcon" src="/images/icon-user.svg" alt="" width="20px" height="20px">
         </div>
         <div class="inputs">
-          <input id="password" type="password" placeholder="password">
+          <input id="password" type="password" placeholder="password" onclick="arrastaSVG()">
           <img id="passwordIcon" src="/images/icon-password.svg" alt="" width="20px" height="25px">
         </div>
       </div>
@@ -30,7 +30,7 @@
         Please, try again!</div>
       <div class="buttons">
           <button onclick="logIn()" id="log-in">Log in</button>
-          <button>Register now</button>
+          <button onclick="window.location.href='http://127.0.0.1:5500/Register/index.html'">Register now</button>
       </div>
     </div>
   </section>
