@@ -33,42 +33,52 @@ inputContainer.addEventListener("focusout", () => {
 } )
 
 function logIn() {
+  if (localStorage.getItem('listaDeUsuarios') == null){
+    errorLogin()
+  } else {
+    let userName = document.getElementById("name")
+    let userPassword = document.getElementById("password")
+    let listaDeUsuarios = []
+
+    let usuarioValido = {
+      nome: '',
+      email: '',
+      pais: '',
+      cidade: '',
+      senha: ''
+    }
+
+    listaDeUsuarios = JSON.parse(localStorage.getItem('listaDeUsuarios'))
+
+    listaDeUsuarios.forEach((item) => {
+      if(userName.value == item.firstName && userPassword.value == item.password 
+        || userName.value == item.email && userPassword.value == item.password) {
+          usuarioValido = {
+            nome: item.firstName,
+            email: item.email,
+            pais: item.country,
+            cidade: item.city,
+            senha: item.password
+          }
+      }
+    })
+
+    if(userName.value == usuarioValido.nome && userPassword.value == usuarioValido.senha) {
+      let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado') || '[]')
+      usuarioLogado.push(usuarioValido.cidade)
+      localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado))
+      window.location.href = "http://127.0.0.1:5500/Keep%20Alive/index.html"
+    } else {
+      errorLogin()
+    }
+  }
+}
+
+function errorLogin() {
   let userName = document.getElementById("name")
   let userPassword = document.getElementById("password")
   let msgError = document.getElementById("msgError")
-  let listaDeUsuarios = []
-
-  let usuarioValido = {
-    nome: '',
-    email: '',
-    pais: '',
-    cidade: '',
-    senha: ''
-  }
-
-  listaDeUsuarios = JSON.parse(localStorage.getItem('listaDeUsuarios'))
-
-  listaDeUsuarios.forEach((item) => {
-    if(userName.value == item.firstName && userPassword.value == item.password 
-      || userName.value == item.email && userPassword.value == item.password) {
-        usuarioValido = {
-          nome: item.firstName,
-          email: item.email,
-          pais: item.country,
-          cidade: item.city,
-          senha: item.password
-        }
-    }
-  })
-
-  if(userName.value == usuarioValido.nome && userPassword.value == usuarioValido.senha) {
-    let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado') || '[]')
-    usuarioLogado.push(usuarioValido.cidade)
-    localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado))
-    window.location.href = "http://127.0.0.1:5500/Keep%20Alive/index.html"
-  } else {
-    userName.setAttribute('style', 'border-color: #E9B425')
-    userPassword.setAttribute('style', 'border-color: #E9B425')
-    msgError.setAttribute('style', 'display: flex')
-  }
+  userName.setAttribute('style', 'border-color: #E9B425')
+  userPassword.setAttribute('style', 'border-color: #E9B425')
+  msgError.setAttribute('style', 'display: flex')
 }
