@@ -47,6 +47,10 @@ header span {
   margin: 25px 40px 0 0;
 }
 
+#temp-weather {
+  margin-left: 12px;
+}
+
 .header-data {
   text-align: center;
   margin-left: 606px;
