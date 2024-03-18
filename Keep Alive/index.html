@@ -10,17 +10,17 @@
 
   <header>
     <div class="logo-header">
-      <img src="/Challenge-1/images/LogoCompasso 1.png" alt="" width="150px" height="42.75px">
+      <img src="/images/LogoCompasso 1.png" alt="" width="150px" height="42.75px">
     </div>
     <div class="header-data">
-      <p>11:26</p>
-      <span>quarta-feira, 13 de março de 2024</span>
+      <p id="clock">11:26</p>
+      <span id="date"></span>
     </div>
     <div class="local-weather">
-      <span>Garanhuns-PE</span>
+      <span id="city-weather"></span>
       <div class="weather">
-        <img src="/Challenge-1/images/cloudy.svg" alt="" width="34px" height="34px">
-        <p>22°</p>
+        <img src="/images/cloudy.svg" alt="" width="34px" height="34px">
+        <p id="temp-weather"></p>
       </div>
     </div>
   </header>
@@ -28,7 +28,7 @@
 
   <section>
 
-    <img src="/Challenge-1/images/bola-LogoCompasso 1.png" alt="">
+    <img src="/images/bola-LogoCompasso 1.png" alt="" width="592px" height="825px">
 
     <div class="right-section">
       <h2>Our mission is</h2>
@@ -57,10 +57,10 @@
     </div>
     <div class="footer-right">
       <div class="continue">
-        <p>Continuar <br> navegando</p>
+        <a href="https://www.google.com/"><p>Continuar <br> navegando</p></a>
       </div>
       <div class="logout">
-        <p>Logout</p>
+        <a href="#" onclick="fazerLogout()"><p>Logout</p></a>
       </div>
     </div>
   </footer>

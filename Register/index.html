@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Challenge - 1</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 <body>
@@ -18,15 +19,15 @@
       <div class="input-container">
         <form action="">
           <div class="inputs">
-            <label id="labelFirstName" for="">first name</label>
+            <label for="">first name</label>
             <input id="firstName" type="text" placeholder="Your first name" required>
           </div>
           <div class="inputs">
-            <label id="labelLastName" for="">last name</label>
+            <label for="">last name</label>
             <input id="lastName" type="text" placeholder="Your last name" required>
           </div>
           <div class="inputs">
-            <label id="labelBirthDate" for="">birth date</label>
+            <label for="">birth date</label>
             <input id="birthDate" type="text" placeholder="MM/DD/YYYY" required>
           </div>
           <div class="inputs">
@@ -42,28 +43,29 @@
             <input id="email" type="email" placeholder="A valid e-mail here" required>
           </div>
           <div class="inputs">
-            <label id="labelPassword" for="">password</label>
+            <label for="">password</label>
             <input id="password" type="password" placeholder="Your password" required>
           </div>
           <div class="inputs-1">
-            <label id="labelConfirmPassword" for="">password</label>
+            <label for="">password</label>
             <input id="confirmPassword" type="password" placeholder="Confirm your password" required>
           </div>
           <div class="buttons">
-            <button id="butaoCadastra" type="submit" onclick="cadastraUsuario()">Register now</button>
+            <button id="butaoCadastra" type="submit">Register now</button>
           </div>
         </form>
       </div>
       <div>
-        <span>Already have an account? <strong>Log in <a href="/Challenge-1/Login/index.html">here</a></strong>.</span>
+        <span>Already have an account? <strong>Log in <a href="/Login/index.html">here</a></strong>.</span>
       </div>
     </div>
   </section>
 
   <section class="right-section">
-    <img src="/Challenge-1/images/Type=Colored negative.svg" alt="">
+    <img src="/images/Type=Colored negative.svg" alt="">
   </section>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,35 +1,30 @@
 let firstName = document.getElementById("firstName")
-let labelFirstname = document.getElementById("labelFirstName")
-let validName
-
 let lastName = document.getElementById("lastName")
-let labelLastName = document.getElementById("labelLastName")
-let validLastName
-
 let birthDate = document.getElementById("birthDate")
-let labelBirthDate = document.getElementById("labelBirthDate")
-
 let country = document.getElementById("country")
-
 let city = document.getElementById("city")
-
 let email = document.getElementById("email")
-
 let password = document.getElementById("password")
-let labelPassword = document.getElementById("labelPassword")
-let validPassword
-
 let confirmPassword = document.getElementById("confirmPassword")
-let labelConfirmPassword = document.getElementById("labelConfirmPassword")
-let validConfirmPassword
 
 let butaoCadastra = document.getElementById("butaoCadastra")
-const form = document.querySelector('form') 
 
-function cadastraUsuario() {
-  if(validName && validLastName && validPassword && validConfirmPassword) {
+butaoCadastra.addEventListener("click", function cadastraUsuario(e) {
+  e.preventDefault()
+
+  let validName = checkName()
+  let validLastName = checkLastName()
+  let validEmail = checkEmail()
+  let validBirthDate = checkBirthDate()
+  let validPassword = checkPassword()
+  let comparePassword = checkConfirmPassword()
+  let validCountry = checkCountry()
+  let validCity = checkCity()
+
+  if(validName && validLastName && validPassword && comparePassword && validEmail
+    && validBirthDate && validCountry && validCity) {
     let listaDeUsuarios = JSON.parse(localStorage.getItem('listaDeUsuarios') || '[]')
-
+    Toastify(msgSuccesRegister).showToast()
     listaDeUsuarios.push(
     {
       firstName: firstName.value,
@@ -42,50 +37,164 @@ function cadastraUsuario() {
     })
 
     localStorage.setItem('listaDeUsuarios', JSON.stringify(listaDeUsuarios))
+    setTimeout(() => {
+      window.location.href = 'http://127.0.0.1:5500/Login/index.html?#'
+    }, 3000);
+  }
+} )
 
+
+
+function checkName() {
+  let letra = firstName.value
+  if(letra.indexOf(' ') >= 0) {
+    Toastify(msgErrorName).showToast()
+    return false
+  } else if(letra == null) {
+    return false
   } else {
-    alert("dados incorretos")
+    return true
   }
 }
 
-firstName.addEventListener('keyup', () => {
-  let letra = firstName.value
-  if(letra.indexOf(' ') >= 0 || letra.length <= 2) {
-    labelFirstname.style.color = 'red'
-    validName = false
-  } else {
-    labelFirstname.style.color = 'green'
-    validName = true
-  }
-})
-
-lastName.addEventListener('keyup', () => {
+function checkLastName() {
   let letra = lastName.value
-  if(letra.indexOf(' ') >= 0 || letra.length <= 2) {
-    labelLastName.style.color = 'red'
-    validLastName = false
+  if(letra.indexOf(' ') >= 0) {
+    Toastify(msgErrorLastName).showToast()
+    return false
+  } else if(letra == null) {
+    return false
   } else {
-    labelLastName.style.color = 'green'
-    validLastName = true
+    return true
   }
-})
+}
 
-password.addEventListener('keyup', () => {
-  if(password.value.length <= 4 ) {
-    labelPassword.style.color = 'red'
-    validPassword = false
+function checkEmail() {
+  const validaEmail = /[a-z0-9]+@+[a-z0-9]+.+[a-z0-9]/
+  if(validaEmail.test(email.value)){
+    return true
+  } else if(email.value == ''){
+    return false
   } else {
-    labelPassword.style.color = 'green'
-    validPassword = true
+    Toastify(msgErrorEmail).showToast()
+    return false
   }
-})
+}
 
-confirmPassword.addEventListener('keyup', () => {
+function checkBirthDate() {
+  const validDate = /\d{2}\/\d{2}\/\d{4}/
+  if(validDate.test(birthDate.value)){
+    return true
+  } else if(birthDate.value == '') {
+    return false
+  } else {
+    Toastify(msgErrorDate).showToast()
+    return false
+  }
+}
+
+function checkPassword() {
+  if(password.value.length >= 4 ) {
+    return true
+  } else if(password.value == '') {
+    return false
+  } else {
+    Toastify(msgErrorPassword).showToast()
+    return false
+  }
+}
+
+function checkConfirmPassword() {
   if(confirmPassword.value != password.value) {
-    labelConfirmPassword.style.color = 'red'
-    validConfirmPassword = false
+    Toastify(msgErrorComparePassword).showToast()
+    return false
+  } else if(confirmPassword.value == '') {
+    return false
   } else {
-    labelConfirmPassword.style.color = 'green'
-    validConfirmPassword = true
+    return true
   }
-})
+}
+
+function checkCountry() {
+  if(country.value == ''){
+    Toastify(msgErrorCountry).showToast()
+    return false
+  } else {
+    return true
+  }
+}
+
+function checkCity() {
+  if(city.value == ''){
+    Toastify(msgErrorCity).showToast()
+    return false
+  } else {
+    return true
+  }
+}
+
+const toastStyle = {
+  padding: '30px',
+  fontSize: '24px',
+  color: 'white',
+  background: "#e74c3c",
+}
+
+let msgErrorName = {
+  text: "O Nome não pode conter espaços",
+  position: "left",
+  style: toastStyle,
+}
+
+let msgErrorLastName = {
+  text: "O último nome não pode conter espaços",
+  position: "left",
+  style: toastStyle,
+}
+
+let msgErrorEmail = {
+  text: "O email deve conter @ e .",
+  position: "left",
+  style: toastStyle,
+}
+
+let msgErrorDate = {
+  text: "A data de nascimento tem que ter o formato DD/MM/YYYY !",
+  position: "left",
+  style: toastStyle,
+}
+
+let msgErrorPassword = {
+  text: "A senha deve ter no mínimo 4 caracteres!",
+  position: "left",
+  style: toastStyle,
+}
+
+let msgErrorComparePassword = {
+  text: "As senhas não conferem!",
+  position: "left",
+  style: toastStyle,
+}
+
+let msgErrorCountry = {
+  text: "Preencha o campo de Country!",
+  position: "left",
+  style: toastStyle,
+}
+
+let msgErrorCity = {
+  text: "Preencha o campo de City!",
+  position: "left",
+  style: toastStyle,
+}
+
+let msgSuccesRegister = {
+  text: "Cadastro realizado com sucesso!",
+  position: "left",
+  style: {
+    background: 'green',
+    padding: '30px',
+    fontSize: '24px',
+    color: 'white',
+  },
+}

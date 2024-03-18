@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @font-face {
   font-family: "MarkPro-Regular";
-  src: url("/Challenge-1/fonts/MARKPRO.OTF");
+  src: url("/fonts/MARKPRO.OTF");
 }
 
 @font-face {
   font-family: "MarkPro-Bold";
-  src: url("/Challenge-1/fonts/MARKPROBOLD.OTF");
+  src: url("/fonts/MARKPROBOLD.OTF");
 }
 
 * {
@@ -19,8 +19,8 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "MarkPro-Regular", sans-serif ;
-  width: auto;
-  height: auto;
+  width: 1920px;
+  height: 1080px;
 }
 
 header {
@@ -33,14 +33,17 @@ header {
 
 header span {
   font-size: 14px;
+  font-family: "MarkPro-Regular";
 }
 
 .logo-header{
+  height: 42.75px;
   margin: 25px 0 0 40px;
 }
 
 .local-weather {
   width: 121px;
+  height: 78px;
   margin: 25px 40px 0 0;
 }
 
@@ -70,16 +73,14 @@ header span {
 
 section {
   display: flex;
+  height: 749px;
 }
 
 .right-section {
   width: 1009px;
   height: 384px;
   text-align: end;
-  margin-top: 103px;
-  margin-right: 134px;
-  margin-left: 185px;
-  margin-bottom: 262px;
+  margin: 103px 134px 262px 185px;
 }
 
 .right-section h1, h2 {
@@ -88,24 +89,24 @@ section {
 
 .right-section h1 {
   font-size: 64px;
-  font-weight: bold;
+  height: 67px;
+  font-family: "MarkPro-Bold";
 }
 
 .right-section h2 {
   font-size: 36px;
-  font-weight: bold;
+  font-family: "MarkPro-Bold";
 }
 
 .right-section p {
   font-size: 24px;
+  font-family: "MarkPro-Regular";
 }
 
 footer {
   display: flex;
   height: 100px;
   width: 1920px;
-  position: absolute;
-  bottom: 0;
   color: #FFFFFF;
   background: linear-gradient(#212221, #1C1D20);
   text-align: center;
@@ -114,6 +115,7 @@ footer {
 
 footer span {
   font-size: 12px;
+  font-family: "MarkPro-Regular";
 }
 
 #left-corner {
@@ -166,15 +168,25 @@ footer span {
   width: 131px;
   height: 100px;
   background: #FFF;
-  color: #C12D18;
 }
 
 .continue p {
   padding: 36.17px 17.36px 34.27px 18.15px;
 }
 
+.continue a {
+  text-decoration: none;
+  color: #C12D18;
+}
+
 .logout {
   width: 131px;
+  font-family: "MarkPro-Bold";
+}
+
+.logout a {
+  text-decoration: none;
+  color: #FFF;
 }
 
 .logout p {

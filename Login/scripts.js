@@ -2,7 +2,7 @@ let inputName = document.getElementById("name")
 let inputPassword = document.getElementById("password")
 let inputContainer = document.querySelector(".input-container")
 
-inputName.addEventListener("click", () => {
+function arrastaSVG() {
   let userIcon = document.getElementById("userIcon")
   let passwordIcon = document.getElementById("passwordIcon")
 
@@ -13,7 +13,7 @@ inputName.addEventListener("click", () => {
   passwordIcon.style.marginLeft = 0;
   passwordIcon.style.position = "relative"
   passwordIcon.style.right = "40px"
-} )
+}
 
 inputContainer.addEventListener("focusout", () => {
   let userIcon = document.getElementById("userIcon")
@@ -62,7 +62,10 @@ function logIn() {
   })
 
   if(userName.value == usuarioValido.nome && userPassword.value == usuarioValido.senha) {
-    window.location.href = "http://127.0.0.1:5500/Challenge-1/Keep%20Alive/index.html"
+    let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado') || '[]')
+    usuarioLogado.push(usuarioValido.cidade)
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado))
+    window.location.href = "http://127.0.0.1:5500/Keep%20Alive/index.html"
   } else {
     userName.setAttribute('style', 'border-color: #E9B425')
     userPassword.setAttribute('style', 'border-color: #E9B425')
